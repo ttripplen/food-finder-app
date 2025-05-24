@@ -55,7 +55,7 @@ const LoginScreen = ({ navigation }: any) => {
     //     }),
     //   });
 
-      navigation.replace("Main");
+      navigation.replace("Loading");
     } catch (error) {
       console.error("Login Error:", error);
       Alert.alert("Error", "Something went wrong");
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "100%",
-    backgroundColor: "#fbfdf0",
+    backgroundColor: "#fbfcee",
     padding: 12,
     borderRadius: 10,
     marginBottom: 10,

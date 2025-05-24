@@ -5,6 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 const RegisterScreen = ({ navigation }: any) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleRegister = async () => {
@@ -51,6 +52,15 @@ const RegisterScreen = ({ navigation }: any) => {
           placeholder="Username"
           value={username}
           onChangeText={setUsername}
+          placeholderTextColor="#999"
+          autoCapitalize="none"
+        />
+
+        <TextInput
+          style={styles.input}
+          placeholder="Address "
+          value={address}
+          onChangeText={setAddress}
           placeholderTextColor="#999"
           autoCapitalize="none"
         />
@@ -124,7 +134,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "100%",
-    backgroundColor: "#fbfdf0",
+    backgroundColor: "#fbfcee",
     padding: 12,
     borderRadius: 10,
     marginBottom: 10,
