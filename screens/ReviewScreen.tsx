@@ -62,6 +62,7 @@ type RootStackParamList = {
     Login: undefined;
     Main: undefined;
     Details: undefined;
+    Feedback: undefined;
 };
 type DetailsScreenNavigationProp = StackNavigationProp<RootStackParamList, "Details">;
 
@@ -80,7 +81,7 @@ const ReviewScreen = () => {
                     <Icon name="chevron-left" size={16} color="#3971b8" />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.editButton}>
+                <TouchableOpacity style={styles.editButton} onPress={() => navigation.navigate('Feedback')}>
                     <Icon name="pencil" size={16} color="#3971b8" />
                 </TouchableOpacity>
             </View>
