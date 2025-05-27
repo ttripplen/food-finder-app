@@ -8,6 +8,7 @@ import RegisterScreen from "../screens/RegisterScreen";
 import HomeScreen from "../screens/HomeScreen";
 import LoadingScreen from "../screens/LoadingScreen";
 import ProfileScreen from "../screens/ProfileScreen";
+import DetailsScreen from "../screens/DetailsScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -20,12 +21,14 @@ const BottomTabNavigator = () => (
         const icons: any = {
           Home: "home",
           Profile: "user",
+          Details: "clipboard",
         };
-        return <Icon name={icons[route.name]} size={size} color={color} />;
+        return <Icon name={icons[route.name]} size={20} color={color} />;
       },
     })}
   >
     <Tab.Screen name="Home" component={HomeScreen} />
+    <Tab.Screen name="Details" component={DetailsScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
   </Tab.Navigator>
 );
@@ -39,6 +42,7 @@ const AppNavigator = () => (
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Main" component={BottomTabNavigator} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="Details" component={DetailsScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );
