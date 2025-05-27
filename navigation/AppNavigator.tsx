@@ -9,6 +9,7 @@ import HomeScreen from "../screens/HomeScreen";
 import LoadingScreen from "../screens/LoadingScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import DetailsScreen from "../screens/DetailsScreen";
+import ReviewScreen from "../screens/ReviewScreen";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,6 +23,7 @@ const BottomTabNavigator = () => (
           Home: "home",
           Profile: "user",
           Details: "clipboard",
+          Review: "clipboard",
         };
         return <Icon name={icons[route.name]} size={20} color={color} />;
       },
@@ -30,6 +32,7 @@ const BottomTabNavigator = () => (
     <Tab.Screen name="Home" component={HomeScreen} />
     <Tab.Screen name="Details" component={DetailsScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
+    <Tab.Screen name="Review" component={ReviewScreen} />
   </Tab.Navigator>
 );
 
@@ -43,6 +46,7 @@ const AppNavigator = () => (
       <Stack.Screen name="Main" component={BottomTabNavigator} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen name="Review" component={ReviewScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );

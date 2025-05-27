@@ -10,9 +10,19 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { StackNavigationProp } from '@react-navigation/stack';
+
+type RootStackParamList = {
+    Loading: undefined;
+    Login: undefined;
+    Main: undefined;
+    Review: undefined;
+};
+
+type ReviewScreenNavigationProp = StackNavigationProp<RootStackParamList, "Review">;
 
 const DetailsScreen: React.FC = () => {
-    const navigation = useNavigation();
+    const navigation = useNavigation<ReviewScreenNavigationProp>();
     const [bookmarked, setBookmarked] = useState(false);
 
     const toggleBookmark = () => {
@@ -88,7 +98,10 @@ const DetailsScreen: React.FC = () => {
                 </Text>
 
                 <View style={styles.buttonRow}>
-                    <TouchableOpacity style={styles.reviewButton}>
+                    <TouchableOpacity
+                        style={styles.reviewButton}
+                        onPress={() => navigation.replace('Review')}
+                    >
                         <Text style={styles.reviewText}>Reviews</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.locationButton}>
