@@ -57,18 +57,9 @@ const ratingsDistribution = [
     { stars: 1, percent: 5 },
 ];
 
-type RootStackParamList = {
-    Loading: undefined;
-    Login: undefined;
-    Main: undefined;
-    Details: undefined;
-    Feedback: undefined;
-};
-type DetailsScreenNavigationProp = StackNavigationProp<RootStackParamList, "Details">;
 
-const ReviewScreen = () => {
 
-    const navigation = useNavigation<DetailsScreenNavigationProp>();
+const ReviewScreen = ({ navigation }: any) => {
     const [selectedFilter, setSelectedFilter] = useState('All');
     const filteredReviews = selectedFilter === 'All'
         ? reviews
@@ -77,7 +68,7 @@ const ReviewScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Details')}>
+                <TouchableOpacity style={styles.backButton} onPress={() => navigation.navigate('Main', { screen: 'Details' })}>
                     <Icon name="chevron-left" size={16} color="#3971b8" />
                 </TouchableOpacity>
 

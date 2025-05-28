@@ -46,7 +46,10 @@ const ProfileScreen = ({ navigation }: any) => {
             <ScrollView style={styles.content}>
                 <View style={styles.contain}>
                     <Text style={styles.sectionTitle}>Account</Text>
-                    <TouchableOpacity style={styles.menuItem}>
+                    <TouchableOpacity
+                        style={styles.menuItem}
+                        onPress={() => navigation.navigate('Edit')}
+                    >
                         <Text style={styles.menuText}>Edit profile</Text>
                         <Feather name="chevron-right" size={20} color="#aaa" />
                     </TouchableOpacity>
@@ -55,7 +58,7 @@ const ProfileScreen = ({ navigation }: any) => {
                         <Feather name="chevron-right" size={20} color="#aaa" />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.menuItem}>
-                        <Text style={styles.menuText}>Get location history</Text>
+                        <Text style={styles.menuText}>Connect social</Text>
                         <Feather name="chevron-right" size={20} color="#aaa" />
                     </TouchableOpacity>
 

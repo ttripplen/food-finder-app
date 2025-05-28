@@ -77,43 +77,42 @@ const SaveLocation: React.FC = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <ScrollView style={styles.card}>
-                <FlatList
-                    data={topRatedPlaces}
-                    keyExtractor={(item) => item.id}
-                    showsVerticalScrollIndicator={false}
-                    renderItem={({ item }) => (
-                        <View style={styles.ratingSection}>
-                            <Image source={item.image} style={styles.imageRating} />
-                            <View style={styles.cardContent}>
-                                <Text style={styles.category}>Saving Location</Text>
-                                <View style={styles.row}>
-                                    <Text style={styles.title}>{item.title}</Text>
-                                    <Text style={styles.time}>{item.time}</Text>
+            <FlatList
+                style={styles.card}
+                data={topRatedPlaces}
+                keyExtractor={(item) => item.id}
+                showsVerticalScrollIndicator={false}
+                renderItem={({ item }) => (
+                    <View style={styles.ratingSection}>
+                        <Image source={item.image} style={styles.imageRating} />
+                        <View style={styles.cardContent}>
+                            <Text style={styles.category}>Saving Location</Text>
+                            <View style={styles.row}>
+                                <Text style={styles.title}>{item.title}</Text>
+                                <Text style={styles.time}>{item.time}</Text>
+                            </View>
+                            <Text style={styles.author}>by {item.author}</Text>
+                            <View style={styles.row}>
+                                <View style={styles.stars}>
+                                    {Array.from({ length: 5 }).map((_, i) => (
+                                        <Icon
+                                            key={i}
+                                            name="star"
+                                            size={14}
+                                            color={i < item.rating ? '#f7c844' : '#ddd'}
+                                            style={{ marginRight: 2 }}
+                                        />
+                                    ))}
                                 </View>
-                                <Text style={styles.author}>by {item.author}</Text>
-                                <View style={styles.row}>
-                                    <View style={styles.stars}>
-                                        {Array.from({ length: 5 }).map((_, i) => (
-                                            <Icon
-                                                key={i}
-                                                name="star"
-                                                size={14}
-                                                color={i < item.rating ? '#f7c844' : '#ddd'}
-                                                style={{ marginRight: 2 }}
-                                            />
-                                        ))}
-                                    </View>
-                                    <View style={styles.reviewBox}>
-                                        <Icon name="user" size={12} color="#aaa" />
-                                        <Text style={styles.reviewText}> {item.reviews}</Text>
-                                    </View>
+                                <View style={styles.reviewBox}>
+                                    <Icon name="user" size={12} color="#aaa" />
+                                    <Text style={styles.reviewText}> {item.reviews}</Text>
                                 </View>
                             </View>
                         </View>
-                    )}
-                />
-            </ScrollView>
+                    </View>
+                )}
+            />
         </SafeAreaView>
 
     );

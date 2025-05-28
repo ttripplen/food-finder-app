@@ -149,7 +149,7 @@ const LoadingScreen: React.FC = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#32d2c3',
+        backgroundColor: '#3971b8',
         alignItems: 'center',
         justifyContent: 'center',
     },

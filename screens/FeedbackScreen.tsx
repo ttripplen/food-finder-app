@@ -11,19 +11,8 @@ import {
 import { FontAwesome } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { useNavigation } from '@react-navigation/native';
-import { StackNavigationProp } from '@react-navigation/stack';
 
-type RootStackParamList = {
-    Loading: undefined;
-    Login: undefined;
-    Main: undefined;
-    Review: undefined;
-};
-type ReviewScreenNavigationProp = StackNavigationProp<RootStackParamList, "Review">;
-
-const FeedBackScreen = () => {
-    const navigation = useNavigation<ReviewScreenNavigationProp>();
+const FeedBackScreen = ({ navigation }: any) => {
     const [rating, setRating] = useState(4);
     const [comment, setComment] = useState('');
     const [imageUri, setImageUri] = useState<string | null>(null);

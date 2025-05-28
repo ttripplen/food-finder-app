@@ -13,6 +13,7 @@ import ReviewScreen from "../screens/ReviewScreen";
 import FeedbackScreen from "../screens/FeedbackScreen";
 import GetLocation from "../screens/GetLocation";
 import SaveLocation from "../screens/SaveLocation";
+import EditProfileScreen from "../screens/EditProfile";
 
 
 const Stack = createStackNavigator();
@@ -42,21 +43,21 @@ const BottomTabNavigator = () => (
   </Tab.Navigator>
 );
 
-
 const AppNavigator = () => (
   <NavigationContainer>
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen name="Loading" component={LoadingScreen} />
-      <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Main" component={BottomTabNavigator} />
-      <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="Details" component={DetailsScreen} />
       <Stack.Screen name="Review" component={ReviewScreen} />
       <Stack.Screen name="Feedback" component={FeedbackScreen} />
-      <Stack.Screen name="History" component={GetLocation} />
-      <Stack.Screen name="Save" component={SaveLocation} />
+      <Stack.Screen name="Edit" component={EditProfileScreen} />
+      {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+      {/* <Stack.Screen name="History" component={GetLocation} /> */}
+      {/* <Stack.Screen name="Save" component={SaveLocation} /> */}
+      {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
+      {/* <Stack.Screen name="Details" component={DetailsScreen} /> */}
     </Stack.Navigator>
   </NavigationContainer>
 );
