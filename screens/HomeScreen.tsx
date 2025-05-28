@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
   locationSearch: {
     flex: 1,
     width: "100%",
-    height: "12%",
+    height: 180,
     backgroundColor: "#3971b8",
     borderRadius: 0,
     borderBottomLeftRadius: 40,

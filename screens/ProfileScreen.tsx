@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     inforBox: {
         flex: 1,
         width: "100%",
-        height: "32%",
+        height: 240,
         backgroundColor: "#3971b8",
         borderRadius: 0,
         borderBottomLeftRadius: 40,

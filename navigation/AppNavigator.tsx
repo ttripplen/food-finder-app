@@ -11,6 +11,8 @@ import ProfileScreen from "../screens/ProfileScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import ReviewScreen from "../screens/ReviewScreen";
 import FeedbackScreen from "../screens/FeedbackScreen";
+import GetLocation from "../screens/GetLocation";
+import SaveLocation from "../screens/SaveLocation";
 
 
 const Stack = createStackNavigator();
@@ -25,6 +27,8 @@ const BottomTabNavigator = () => (
           Home: "home",
           Profile: "user",
           Details: "clipboard",
+          History: "history",
+          Save: "bookmark",
         };
         return <Icon name={icons[route.name]} size={20} color={color} />;
       },
@@ -33,8 +37,11 @@ const BottomTabNavigator = () => (
     <Tab.Screen name="Home" component={HomeScreen} />
     <Tab.Screen name="Details" component={DetailsScreen} />
     <Tab.Screen name="Profile" component={ProfileScreen} />
+    <Tab.Screen name="History" component={GetLocation} />
+    <Tab.Screen name="Save" component={SaveLocation} />
   </Tab.Navigator>
 );
+
 
 const AppNavigator = () => (
   <NavigationContainer>
@@ -48,6 +55,8 @@ const AppNavigator = () => (
       <Stack.Screen name="Details" component={DetailsScreen} />
       <Stack.Screen name="Review" component={ReviewScreen} />
       <Stack.Screen name="Feedback" component={FeedbackScreen} />
+      <Stack.Screen name="History" component={GetLocation} />
+      <Stack.Screen name="Save" component={SaveLocation} />
     </Stack.Navigator>
   </NavigationContainer>
 );
